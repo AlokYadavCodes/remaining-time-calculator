@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Red Rose", serif;
+}
+html{
+    font-size: 62.5%;
+    height: 100%;
+}
+  
+header{
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+}
+body{
+    background-color: #1B262C;
+    color: #fff;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    height: 35px;
+    width: 16rem;
+    text-align: center;
+    font-size: 1.8rem;
+    border: none;
+    margin: 0 5px;
+    padding: 1rem;
+    background-color: #d6d6d6;
+    border-radius: 15px;
+}
+.note{
+    display: flex;
+}
+.note-text{
+    margin: 5px 2px 15px 2px;
+    font-size: 1.5rem;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+}
+button{
+    height: 40px;
+    width: 20rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #3282B8;
+    color: #fff;
+    font-size: 2.5rem;
+}
+button:active{
+    background-color: #3282b8bd;
+}
+.dates-and-button{
+    margin: 3rem;
+    padding: 1.5rem;
+    background-color: #25353d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+}
+label{
+    font-size: 2rem;
+}
+
+.date-container{
+    margin: 1rem;
+}
+.total-and-elapsed{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.total,.elapsed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 35px;
+    border: 1px solid #3282b8;
+    background-color: #07162579;
+    border-radius: 25px;
+}
+.info-text{
+    font-size: 2rem;
+}
+.info-data{
+    font-size: 3.5rem;
+}
+.info-text{
+    font-size: 2rem;
+}
+.remaining-top{
+    display: flex;
+    justify-content: center;
+    margin: 30px 16px 0 16px;
+}
+.remaining-top-text{
+    font-size: 2rem;
+    background-color: #071625;
+    padding: 4px 20px ;
+    border-radius: 25px 25px 0 0;
+    border-bottom: 1px solid #3282B8;
+}
+.remaining{
+    display: flex;
+    justify-content: center;
+    margin: 0 16px;
+    padding: 10px 5px;
+    font-size: 5rem;
+    align-items: center;
+    background-color: #071625;
+    border-radius: 20px;
+}
+.remaining-text{
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+.remaining-block{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    align-items: center;
+}
+.colon{
+    margin-top: 1rem;
+}
+.controls{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+#stop-btn,#reset-btn{
+    width: 10rem;
+    height: 3.5rem;
+    font-size: 2.2rem;
+}
+
+@media screen and (max-width:500px){
+    html{
+        font-size: 57%;
+    }
+    header{
+        font-size: 1.8rem;
+    }
+    .remaining{
+        font-size: 40px;
+        align-items: center;
+    }
+    .remaining-block{
+        margin: 2px;
+    }
+}
+
+footer{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    text-align: center;
+}
+footer a{
+    color: #3282B8;
+}
+footer a:visited{
+    color: #3282b8;
+}
