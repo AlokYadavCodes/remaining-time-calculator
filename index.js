@@ -1,3 +1,14 @@
+// Date initialisation
+let todayDate=("0"+new Date().getDate()).slice(-2);
+let todayMonth=(new Date().getMonth())+1;
+todayMonth=("0"+todayMonth).slice(-2);
+let todayYear=new Date().getFullYear();
+let todayFullDate=`${todayYear}-${todayMonth}-${todayDate}`;
+let startDateInput=document.querySelector('#start-date');
+startDateInput.value=todayFullDate;
+let endDateInput=document.querySelector('#end-date');
+endDateInput.value=todayFullDate;
+
 let intervalID;
 calculate();
 function calculate(){
@@ -5,7 +16,7 @@ function calculate(){
     let startDate=document.querySelector('#start-date').value;
     let endDate=document.querySelector('#end-date').value;
     if(startDate=='' || endDate==''){
-        alert('Please select start and end date. \nBina date ke kya hi calculate karu?');
+        alert('Please select start and end date.');
         return;
     }
     let startYear=startDate.slice(0,4);
@@ -82,15 +93,12 @@ function display(hoursLeft,minutesLeft,secondsLeft,milliSecLeft,totalHours,elaps
 }
 
 // Input Date Restriction
-let todayDate=new Date().toISOString().slice(0,10);
-let startDateInput=document.querySelector('#start-date');
-startDateInput.max=todayDate;
-let endDateInput=document.querySelector('#end-date');
-endDateInput.min=todayDate;
+startDateInput.max=todayFullDate;
+endDateInput.min=todayFullDate;
 
 //controls button
 
-let stop=()=>alert('समय रोकने से नहीं रुकता। \nकाम करो, बक*दी नही।');
+let stop=()=>alert('Time never stops. \n Start doing things that really matters.');
 let reset=()=>{
     clearInterval(intervalID);
     document.querySelector('.display').innerHTML='';

@@ -175,10 +175,28 @@ footer{
     margin-top: auto;
     margin-bottom: 5px;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 footer a{
     color: #3282B8;
 }
 footer a:visited{
     color: #3282b8;
+}
+#github-icon{
+    width: 20px;
+    margin: 0 8px 0 0;
+}
+.github a{
+    background-color: #313131ab;
+    width: 70px;
+    height: 22px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-decoration: none;
 }

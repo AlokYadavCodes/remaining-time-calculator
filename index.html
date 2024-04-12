@@ -14,11 +14,11 @@
     <div class="dates-and-button">
         <div class="date-container">
             <label for="start-date" >Start Date:</label>
-            <input id="start-date" value="2024-04-01" type="date">
+            <input id="start-date" type="date">
         </div>
         <div class="date-container">
             <label for="end-date">End Date:</label>
-            <input id="end-date" value="2024-06-30" type="date">
+            <input id="end-date" type="date">
         </div>
         <div class="note"> <span class="material-symbols-outlined">info</span> <span class="note-text">Start and end date are inclusive.</span></div>
         <button id="btn" onclick="calculate()">Calculate</button>
@@ -26,7 +26,10 @@
     <div class="display"></div>
 
     <footer>
-        Made with 🧡 by <a target="_blank" href="https://x.com/alokcodes">Alok</a>
+        <div class="github">
+            <a target="_blank" href="https://github.com/AlokYadavCodes/remaining-time-calculator"><img id="github-icon" src="github-icon.png" alt="github link"> <span>link</span></a>
+        </div>
+        <div> Made with 🧡 by <a target="_blank" href="https://x.com/alokcodes">Alok</a></div>
     </footer>
     
     <script src="index.js"></script>
