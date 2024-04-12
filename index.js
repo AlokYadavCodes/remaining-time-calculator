@@ -1,13 +1,13 @@
-// Date initialisation
 let todayDate=("0"+new Date().getDate()).slice(-2);
 let todayMonth=(new Date().getMonth())+1;
 todayMonth=("0"+todayMonth).slice(-2);
 let todayYear=new Date().getFullYear();
 let todayFullDate=`${todayYear}-${todayMonth}-${todayDate}`;
+// Input Date Restriction
 let startDateInput=document.querySelector('#start-date');
-startDateInput.value=todayFullDate;
+startDateInput.max=todayFullDate;
 let endDateInput=document.querySelector('#end-date');
-endDateInput.value=todayFullDate;
+endDateInput.min=todayFullDate;
 
 let intervalID;
 calculate();
@@ -16,7 +16,7 @@ function calculate(){
     let startDate=document.querySelector('#start-date').value;
     let endDate=document.querySelector('#end-date').value;
     if(startDate=='' || endDate==''){
-        alert('Please select start and end date.');
+        alert('Please select start and end date. \nBina date ke kya hi calculate karu?');
         return;
     }
     let startYear=startDate.slice(0,4);
@@ -92,13 +92,8 @@ function display(hoursLeft,minutesLeft,secondsLeft,milliSecLeft,totalHours,elaps
     </div>`;
 }
 
-// Input Date Restriction
-startDateInput.max=todayFullDate;
-endDateInput.min=todayFullDate;
-
 //controls button
-
-let stop=()=>alert('Time never stops. \n Start doing things that really matters.');
+let stop=()=>alert('समय रोकने से नहीं रुकता। \nकाम करो, बक*दी नही।');
 let reset=()=>{
     clearInterval(intervalID);
     document.querySelector('.display').innerHTML='';
