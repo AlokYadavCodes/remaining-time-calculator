@@ -76,13 +76,15 @@ label{
 .total-and-elapsed{
     display: flex;
     justify-content: space-around;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .total,.elapsed{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 35px;
+    justify-content: flex-start;
+    padding: 10px 7.5vw;
+    /* padding: 10px 35px; */
     border: 1px solid #3282b8;
     background-color: #07162579;
     border-radius: 25px;
@@ -111,8 +113,8 @@ label{
 .remaining{
     display: flex;
     justify-content: center;
-    margin: 0 16px;
-    padding: 10px 5px;
+    margin: 0 8px;
+    padding: 10px 2px;
     font-size: 5rem;
     align-items: center;
     background-color: #071625;
@@ -132,7 +134,7 @@ label{
     margin-top: 1rem;
 }
 .controls{
-    margin-top: 20px;
+    margin: 20px 0;
     display: flex;
     justify-content: space-around;
 }
@@ -140,6 +142,12 @@ label{
     width: 10rem;
     height: 3.5rem;
     font-size: 2.2rem;
+}
+
+@media screen and (max-width:620px) and (min-width:501px){
+    .remaining-block{
+        margin: 5px;
+    }
 }
 
 @media screen and (max-width:500px){
@@ -156,6 +164,9 @@ label{
     .remaining-block{
         margin: 2px;
     }
+    .remaining-text{
+        margin: 0;
+    }
 }
 
 footer{
@@ -164,10 +175,28 @@ footer{
     margin-top: auto;
     margin-bottom: 5px;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 footer a{
     color: #3282B8;
 }
 footer a:visited{
     color: #3282b8;
+}
+#github-icon{
+    width: 20px;
+    margin: 0 8px 0 0;
+}
+.github a{
+    background-color: #313131ab;
+    width: 70px;
+    height: 22px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-decoration: none;
 }
