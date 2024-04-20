@@ -1,14 +1,3 @@
-let todayDate=("0"+new Date().getDate()).slice(-2);
-let todayMonth=(new Date().getMonth())+1;
-todayMonth=("0"+todayMonth).slice(-2);
-let todayYear=new Date().getFullYear();
-let todayFullDate=`${todayYear}-${todayMonth}-${todayDate}`;
-// Input Date Restriction
-let startDateInput=document.querySelector('#start-date');
-startDateInput.max=todayFullDate;
-let endDateInput=document.querySelector('#end-date');
-endDateInput.min=todayFullDate;
-
 let intervalID;
 calculate();
 function calculate(){
@@ -28,7 +17,8 @@ function calculate(){
     endDay=eval(`${endDay}+1`);   // to make end date inclusive
     let startDateObj=new Date(startYear,startMonth,startDay);
     let endDateObj=new Date(endYear,endMonth,endDay);
-    updateTime(startDateObj,endDateObj)
+    rohitTimeCalculation(startDateObj,endDateObj);
+    updateTime(startDateObj,endDateObj);
 }
 
 function updateTime(startDateObj,endDateObj){
@@ -92,6 +82,13 @@ function display(hoursLeft,minutesLeft,secondsLeft,milliSecLeft,totalHours,elaps
     </div>`;
 }
 
+// Input Date Restriction
+let todayDate=new Date().toISOString().slice(0,10);
+let startDateInput=document.querySelector('#start-date');
+startDateInput.max=todayDate;
+let endDateInput=document.querySelector('#end-date');
+endDateInput.min=todayDate;
+
 //controls button
 let stop=()=>alert('समय रोकने से नहीं रुकता। \nकाम करो, बक*दी नही।');
 let reset=()=>{
@@ -99,4 +96,29 @@ let reset=()=>{
     document.querySelector('.display').innerHTML='';
     document.querySelector('#start-date').value='';
     document.querySelector('#end-date').value='';
+    document.querySelector('.rohit-display').innerHTML=``;
+    rohitDisplayElement.classList.add("hide");
 }
+
+//rohit sir calculation
+function rohitTimeCalculation(startDateObj,endDateObj){
+    let today=new Date();
+    let rohitTotalHours= (Math.floor((endDateObj.getTime()-startDateObj.getTime())/1000/60/60))*0.625-15;
+    let rohitElapsedHours= Math.floor(((today.getTime()-startDateObj.getTime())/1000/60/60)*0.625);
+    let rohitDisplayElement=document.querySelector('.rohit-display');
+    rohitDisplayElement.innerHTML=`
+    <div class="total rohit-total">
+        <div class="rohit-info-text">Total Hours</div>
+            <div class="rohit-info-data">${rohitTotalHours}</div>
+        </div>
+        <div class="elapsed rohit-elapsed">
+            <div class="rohit-info-text">Elapsed Hours</div>
+        <div class="rohit-info-data">${rohitElapsedHours}</div>
+    </div>`
+}
+let rohitBtn=document.querySelector('.rohit-btn');
+let rohitDisplayElement=document.querySelector('.rohit-display');
+rohitBtn.addEventListener('click',()=>{
+    rohitDisplayElement.classList.toggle('hide');
+    document.querySelector('.fa-angle-down').classList.toggle('rotate')
+})
