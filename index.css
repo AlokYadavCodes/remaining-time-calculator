@@ -135,6 +135,7 @@ label{
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 15px;
 }
 #stop-btn,#reset-btn{
     width: 10rem;
