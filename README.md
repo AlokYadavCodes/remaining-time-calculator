@@ -5,5 +5,7 @@ Calculate total hours, elapsed hours and remaining time by selecting start date 
 3. Click "Calculate" button to see the remaining time.
 
 Try it here:
-1. [main branch]: https://remaining-time-calculator.vercel.app/
-2. [pre-initialised-dates]: https://remaining-time.netlify.app/
+
+main branch: https://remaining-time-calculator.vercel.app/
+
+pre-initialised-dates: https://remaining-time.netlify.app/
